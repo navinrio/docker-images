@@ -1,8 +1,8 @@
 FROM alpine:3.17
 
 RUN apk update && apk upgrade 
-RUN apk add --no-cache nginx bash -q \
-  && apk add --no-cache php81 php81-fpm php81-opcache php81-mysqli php81-pdo_mysql php81-gd php81-zlib php81-curl php81-xml -q \
+RUN apk add --no-cache nginx nginx-mod-http-headers-more nginx-mod-http-geoip nginx-mod-http-cache-purge bash -q \
+  && apk add --no-cache php81 php81-fpm php81-opcache php81-pdo_mysql php81-pdo php81-gd php81-zlib php81-mysqli php81-curl php81-xml -q \
   && mkdir /var/run/php
 RUN ln -sf /dev/stdout /var/log/nginx/access.log
 RUN ln -sf /dev/stderr /var/log/nginx/error.log
