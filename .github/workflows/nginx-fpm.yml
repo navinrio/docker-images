@@ -1,4 +1,4 @@
-name: Nginx build with FPM
+name: Nginx build with php-fpm
 
 on:
   workflow_dispatch: 
